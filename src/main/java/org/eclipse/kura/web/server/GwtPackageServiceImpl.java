@@ -136,6 +136,7 @@ public class GwtPackageServiceImpl extends OsgiRemoteServiceServlet implements G
             connection.connect();
 
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(connection.getInputStream()); //sink
 
